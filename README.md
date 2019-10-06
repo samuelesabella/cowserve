@@ -1,7 +1,7 @@
 # COWSERVE
 Serve cowsay messages over http and https
 ### Usage   
-Serve a cowsay message over http on localhost
+Serve a cowsay message over https on localhost:8080
 ```    
 $ docker run -it -d -p 8080:8080 samuelesabella/cowserve   
 $ curl --insecure http://localhost/
@@ -17,11 +17,11 @@ $ curl --insecure http://localhost/
 Cowsay messages are set using the request path (e.g. retrieving *https://localhost/abc* will return a cowsay "abc" message).
 **cowserve** supports default messages by specifiying the environment variable *msg* 
 ```    
-$ docker run -it -p 80:8080 --rm -e msg="Hello, cowsay!" samuelesabella/cowserve    
+$ docker run -it -p 8080:8080 --rm -e msg="Hello, cowsay!" samuelesabella/cowserve    
 ```
-The container also supports https by setting the *::https::* tag inside the default message  
+The container also supports http by setting the *::http::* tag inside the default message  
 ```    
-$ docker run -it -p 80:8080 --rm -e msg="::https:: Hello, https cowsay!" samuelesabella/cowserve 
+$ docker run -it -p 80:8080 --rm -e msg="::http:: Hello, http cowsay!" samuelesabella/cowserve 
 ```
 ### Build the image    
 ```    
