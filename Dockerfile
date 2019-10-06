@@ -15,4 +15,6 @@ RUN npm i --save-dev --loglevel=error https-localhost
 
 ADD cowserve.js ./
 
+EXPOSE 8080
+
 CMD ["node", "cowserve.js"]
