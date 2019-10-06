@@ -11,7 +11,9 @@ let MSG = 'Cowserve by samuelesabella';
 const PORT = (process.env.port ? process.env.port : 8080); 
 if (process.env.msg) {
   HTTPS = process.env.msg.includes('::https::');
-  MSG = process.env.msg.replace(/::\w+::/g, '').trim();
+  const aus = process.env.msg.replace(/::\w+::/g, '').trim();
+  if (aus)
+    MSG = aus;
 } 
 
 process.on('SIGINT', function() {
@@ -21,7 +23,7 @@ process.on('SIGINT', function() {
 // ----- SERVE ----- //
 function cowserve (req, res) {
   const arg = (req.url=='/' ? MSG : req.url.substr(1));
-  const safe_arg = arg.replace(/[^\w+,-.]+/g, '');
+  const safe_arg = arg.replace(/[^\w,\.\ ]+/g, '');
   exec(`cowsay ${safe_arg}`, (error, stdout, stderr) => { 
     res.write(stdout);
     res.end();

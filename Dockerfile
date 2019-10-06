@@ -15,4 +15,4 @@ RUN npm i --save-dev --loglevel=error https-localhost
 
 ADD cowserve.js ./
 
-ENTRYPOINT ["node", "cowserve.js"]
+CMD ["node", "cowserve.js"]
