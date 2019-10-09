@@ -4,7 +4,7 @@ Serve cowsay messages over http and https
 Serve a cowsay message over https on localhost:8080
 ```    
 $ docker run -it -d -p 8080:8080 sabellas/cowserve   
-$ curl --insecure http://localhost/
+$ curl --insecure http://localhost:8080/
  ____________________________ 
 < Cowserve by samuelesabella >
  ---------------------------- 
