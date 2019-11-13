@@ -27,7 +27,7 @@ const exec = require('child_process').exec;
 const httpsLocalhost = require("https-localhost")()
 
 let https_enabled = true;
-let dmsg = 'Cowserve by samuelesabella';
+let dmsg = 'Cowserved!';
 const PORT = (process.env.port ? process.env.port : 8080); 
 const EMSG = process.env.msg; 
 
